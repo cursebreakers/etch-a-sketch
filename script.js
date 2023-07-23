@@ -123,6 +123,14 @@ function handleArrowKeys(event) {
   }
 }
 
+// Event listener for mouseover events on the grid container
+gridContainer.addEventListener("mouseover", colorBlock);
+
+// Event listener for touchmove events on the grid container
+gridContainer.addEventListener("touchmove", (event) => {
+  event.preventDefault(); // Prevent touch scroll on touchscreen devices
+  colorBlock(event);
+});
 
 // Event listener for genReset button
 genResetButton.addEventListener("click", createGrid);
