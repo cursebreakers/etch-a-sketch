@@ -15,24 +15,26 @@ const reSizeButton = document.getElementById("reSize");
 let gridSize = 16; // Default grid size
 const maxGridSize = 100; // Maximum number of divs/blocks
 
+
 // Function to create the grid
 function createGrid() {
-    gridContainer.innerHTML = ""; // Clear previous grid
+  gridContainer.innerHTML = ""; // Clear previous grid
 
-    const blockSize = Math.floor(960 / gridSize);
+  // Calculate the block size to ensure total size remains under 960px
+  const blockSize = Math.floor(960 / gridSize);
 
-    // Create gridSize x gridSize grid
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++) {
-          const gridBlock = document.createElement("div");
-          gridBlock.classList.add("grid-block");
-          gridBlock.style.width = `${blockSize}px`;
-          gridBlock.style.height = `${blockSize}px`;
+  // Create gridSize x gridSize grid
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
+      const gridBlock = document.createElement("div");
+      gridBlock.classList.add("grid-block");
+      gridBlock.style.width = `${blockSize}px`;
+      gridBlock.style.height = `${blockSize}px`;
 
-        // Add event listener to color grid block on mouseover
-        gridBlock.addEventListener("mouseover", colorBlock);
+      // Add event listener to color grid block on mouseover
+      gridBlock.addEventListener("mouseover", colorBlock);
 
-        gridContainer.appendChild(gridBlock);
+      gridContainer.appendChild(gridBlock);
     }
   }
 }
