@@ -2,16 +2,33 @@
 body {
     background-color: #111111;
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+nav {
+    display: flex;
+    background-color: #333;
+    padding: 2px;
+    max-width: auto;
+    margin: 0px;
+}
+
+button {
+    border-radius: 2px;
+    background-color: #333;
+    color: antiquewhite;
+    max-width: auto;
+}
 
 #grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    gap: 1px;
-    max-width: 960px;
-    margin: 0 auto;
+    gap: 0px;
+    max-width: auto;
+    margin: 0px auto;
   }
   
   .grid-block {
