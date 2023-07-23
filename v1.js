@@ -53,29 +53,10 @@ function createGrid() {
 // Function to color the grid block with a random rainbow neon color
 function colorBlock(event) {
     const gridBlock = event.target;
-    
-      // Generate a random color for the grid block if not already generated
-    let randomColor = gridBlock.dataset.color;
-    if (!randomColor) {
-      randomColor = getRandomColor();
-      gridBlock.dataset.color = randomColor;
-    }
-
-    // Retrieve the current brightness or set it to 100% by default
-    let currentBrightness = gridBlock.dataset.brightness || 100;
-    currentBrightness = Math.max(currentBrightness - 10, 0); // Decrement brightness by 10%
-
-    // Update the dataset with the new brightness value
-    gridBlock.dataset.brightness = currentBrightness;
-
-    // Calculate the filter value based on the brightness
-    const filterValue = `brightness(${currentBrightness}%)`;
-
-    // Apply the filter to darken the color
+    const randomColor = getRandomColor();
     gridBlock.style.backgroundColor = randomColor;
-    gridBlock.style.filter = filterValue;
 }
-
+  
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
