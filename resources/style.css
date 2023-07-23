@@ -1,0 +1,58 @@
+* {
+  font-family: 'Courier New', 'Courier,' 'monospace';
+}
+
+body {
+    background-color: #111111;
+    color:antiquewhite;
+    margin: 0px;
+    
+}
+
+header {
+ display: flex;
+ flex-wrap: wrap;
+ margin: 0px;
+ padding: 8px;
+ background-color: aquamarine;
+ color: #111111;
+ justify-content: flex-end;
+}
+
+h1 {
+  font-size: 38px;
+  opacity: 1;
+  padding: 8px;
+  align-self: flex-start;
+}
+
+button {
+    opacity: 1;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 16px;
+    background-color: #111111;
+    height: fit-content;
+    color: antiquewhite;
+    font-family: monospace;
+    align-self: center;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    gap: 0px;
+    max-width: 960px;
+    max-height: 960px;
+    margin: 0px auto;
+  }
+  
+  .grid-block {
+    background-color: #111111;
+    border: 0px solid #333;
+  }
+
+
+  h6, h1 {
+    font-family: monospace;
+  }
