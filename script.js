@@ -1,4 +1,4 @@
-// Sketch-a-color
+// Sketch-a-color 
 
 const gridContainer = document.getElementById("grid-container");
 const genResetButton = document.getElementById("genReset");

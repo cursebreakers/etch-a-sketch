@@ -1,4 +1,4 @@
-// Sketch-a-color
+// Sketch-a-color 
 
 const gridContainer = document.getElementById("grid-container");
 const genResetButton = document.getElementById("genReset");
@@ -53,10 +53,29 @@ function createGrid() {
 // Function to color the grid block with a random rainbow neon color
 function colorBlock(event) {
     const gridBlock = event.target;
-    const randomColor = getRandomColor();
+    
+      // Generate a random color for the grid block if not already generated
+    let randomColor = gridBlock.dataset.color;
+    if (!randomColor) {
+      randomColor = getRandomColor();
+      gridBlock.dataset.color = randomColor;
+    }
+
+    // Retrieve the current brightness or set it to 100% by default
+    let currentBrightness = gridBlock.dataset.brightness || 100;
+    currentBrightness = Math.max(currentBrightness - 10, 0); // Decrement brightness by 10%
+
+    // Update the dataset with the new brightness value
+    gridBlock.dataset.brightness = currentBrightness;
+
+    // Calculate the filter value based on the brightness
+    const filterValue = `brightness(${currentBrightness}%)`;
+
+    // Apply the filter to darken the color
     gridBlock.style.backgroundColor = randomColor;
+    gridBlock.style.filter = filterValue;
 }
-  
+
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -104,6 +123,14 @@ function handleArrowKeys(event) {
   }
 }
 
+// Event listener for mouseover events on the grid container
+gridContainer.addEventListener("mouseover", colorBlock);
+
+// Event listener for touchmove events on the grid container
+gridContainer.addEventListener("touchmove", (event) => {
+  event.preventDefault(); // Prevent touch scroll on touchscreen devices
+  colorBlock(event);
+});
 
 // Event listener for genReset button
 genResetButton.addEventListener("click", createGrid);
