@@ -2,7 +2,7 @@
 
 *Enjoy these kaleidoscopic hover and transition effects.*
 
-View live on [GitHUb Pages](https://cursebreakers.github.io/etch-a-sketch/)
+View live on [GitHub Pages](https://cursebreakers.github.io/etch-a-sketch/)
 
 ---
 
